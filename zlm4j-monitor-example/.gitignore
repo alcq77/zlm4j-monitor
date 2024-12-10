@@ -1,31 +1,13 @@
 # Maven
 target/
-*.jar
-*.war
-*.ear
-*.class
 
 # IDE
 .idea/
 *.iml
-.project
-.classpath
-.settings/
 
 # Logs
 logs/
-*.log
-
-# OS
-.DS_Store
-Thumbs.db
 
 # Build
 build/
-out/
-bin/
 
-# Other
-*.bak
-*.tmp
-*.swp 
