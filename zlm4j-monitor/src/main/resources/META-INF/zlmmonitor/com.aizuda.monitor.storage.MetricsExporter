@@ -1,0 +1,2 @@
+# 默认导出器
+default=com.aizuda.monitor.storage.DefaultMetricsExporter

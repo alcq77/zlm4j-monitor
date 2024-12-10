@@ -1,0 +1,62 @@
+# ZLM Monitor 配置
+
+# 基础配置
+basic:
+  # 采样间隔(毫秒)
+  sample-interval: 5000
+  # 初始延迟(毫秒)
+  initial-delay: 0
+  # 是否守护线程
+  daemon: true
+
+# 指标采集配置
+metrics:
+  # 系统指标
+  system:
+    enabled: true
+    # 采集间隔(毫秒)
+    interval: 5000
+    # 采集项
+    collectors:
+      - cpu
+      - memory
+      - disk
+      - network
+
+  # 流媒体指标
+  stream:
+    enabled: true
+    interval: 5000
+    collectors:
+      - rtmp
+      - rtsp
+      - hls
+
+  # 性能指标
+  performance:
+    enabled: true
+    interval: 5000
+    collectors:
+      - latency
+      - bitrate
+      - frame-rate
+
+# 导出器配置
+exporter:
+  # 启用的导出器
+  enabled:
+    - prometheus
+
+  # Prometheus导出器配置
+  prometheus:
+    # HTTP服务端口
+    port: 9090
+    # 指标路径
+    path: "/metrics"
+    # 实例标识
+    instance-id: "${ZLM_INSTANCE_ID:default}"
+    # 标签配置
+    labels:
+      app: "zlm"
+      env: "${ZLM_ENV:prod}"
+      version: "${ZLM_VERSION:unknown}"

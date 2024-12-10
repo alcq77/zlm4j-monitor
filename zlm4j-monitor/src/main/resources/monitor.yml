@@ -1,0 +1,47 @@
+# ZLM监控配置
+
+# 基础配置
+basic:
+  # 采样间隔 (单位: 毫秒, 范围: 1000-60000)
+  sample-interval: 5000  
+  # 初始延迟 (单位: 毫秒, 范围: 0-60000)
+  initial-delay: 0       
+  # 是否为守护线程
+  daemon: true           
+
+# 线程池配置
+thread:
+  # 核心线程数 (范围: 1-100)
+  core-pool-size: 2    
+  # 最大线程数 (范围: core-pool-size到100)
+  max-pool-size: 4     
+  # 队列容量 (范围: 1-10000)
+  queue-capacity: 100  
+  # 线程保活时间 (单位: 秒, 范围: 1-3600)
+  keep-alive-time: 60  
+  # 是否允许核心线程超时
+  allow-core-timeout: false
+
+# 指标采集配置
+metrics:
+  system:
+    enabled: true      # 是否启用系统指标
+  stream:
+    enabled: true      # 是否启用流媒体指标
+  network:
+    enabled: true      # 是否启用网络指标
+  performance:
+    enabled: true      # 是否启用性能指标
+
+# 导出器配置
+exporter:
+  names:              # 启用的导出器列表
+    - default         # 默认日志导出器
+    - console         # 控制台导出器
+    - json           # JSON文件导出器
+  batch-enabled: false # 是否启用批量导出
+  batch-size: 100      # 批量导出大小
+  batch-timeout: 60    # 批量导出超时时间(秒)
+
+# 日志级别
+log-level: INFO        # 日志级别
