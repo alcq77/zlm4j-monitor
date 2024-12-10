@@ -34,7 +34,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *      - 启用配置热加载(如果使用配置文件)
  *    ↓
  *    初始化组件
- *      - 初始化��池
+ *      - 初始化线程池
  *      - 初始化收集器
  *      - 初始化导出器
  * 
