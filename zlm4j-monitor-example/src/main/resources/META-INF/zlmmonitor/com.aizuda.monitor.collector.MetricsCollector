@@ -1,2 +1,0 @@
-custom-system=com.aizuda.monitor.example.collector.CustomSystemCollector
-custom-stream=com.aizuda.monitor.example.collector.CustomStreamCollector 
